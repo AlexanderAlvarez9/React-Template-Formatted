@@ -1,0 +1,21 @@
+.Footer {
+  grid-area: Footer;
+  background-color: var(--principal);
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.3em;
+  position: fixed;
+  margin: 0.1em;
+  bottom: 0.1em;
+  right: 0.1em;
+
+  &--social-networks {
+    padding: 0 1em;
+  }
+
+  .socialIcon {
+    color: var(--white);
+    font-size: 1em;
+    margin: 0.5em;
+  }
+}

@@ -1,0 +1,61 @@
+@import '../../assets/styles/containers/App.scss';
+
+.Login {
+  align-items: center;
+  background-color: var(--card);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 3em auto;
+  padding: 1em;
+  width: 80%;
+
+  input {
+    @include input();
+  }
+
+  .inputBox {
+    display: grid;
+  }
+
+  label {
+    @include label();
+  }
+
+  button {
+    @include button();
+  }
+
+  button:hover {
+    @include hoverButton();
+  }
+
+  button:active {
+    @include activeButton();
+  }
+
+  &--Action {
+    display: grid;
+    margin: 1em;
+    // grid-template-columns: 10% 1fr;
+    grid-template-areas: "checkbox text"
+      "forgot forgot";
+
+    #remember {
+      height: 1em;
+      grid-area: checkbox;
+      width: 1em;
+    }
+
+    #remember-text {
+      grid-area: text;
+      margin: 0;
+    }
+
+    &__forgot {
+      grid-area: forgot;
+      margin-top: 1em;
+      text-align: center;
+    }
+  }
+}

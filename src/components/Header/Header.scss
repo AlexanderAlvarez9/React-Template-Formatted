@@ -1,0 +1,43 @@
+.Header {
+  align-items: center;
+  background-color: var(--principal);
+  color: var(--white);
+  display: flex;
+  height: 3rem;
+  width: 100%;
+
+  grid-area: Header;
+  justify-content: space-between;
+
+  .item {
+    margin: 0 0.5em;
+  }
+
+  &--main {
+    padding: 0 1em;
+  }
+
+  &--user {
+    padding: 0 1em;
+  }
+
+  /* unvisited link */
+  a:link {
+    color: var(--link)
+  }
+
+  /* visited link */
+  a:visited {
+    color: var(--visited)
+  }
+
+  /* mouse over link */
+  a:hover {
+    color: var(--hover)
+  }
+
+  /* selected link */
+  a:active {
+    color: var(--active)
+  }
+}
