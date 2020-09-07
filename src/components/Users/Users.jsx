@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import RollUpUser from '../RollUpUser';
+import RollUpUser from './RollUpUser';
 import './Users.scss'
 import { db } from '../../firebase';
-import { toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Users = () => {
 
@@ -19,7 +20,7 @@ const Users = () => {
         });
       } else {
         await db.collection('users').doc(currentId).update(user)
-        toast('Objeto actualizado', {
+        toast('Usuario actualizado', {
           type: 'info',
           autoClose: 2000
         });
@@ -33,7 +34,7 @@ const Users = () => {
 
   const handleDelete = async (id) => {
     if (window.confirm('Esta seguro?')) {
-      toast('Objeto Borrado', {
+      toast('Usuario Borrado', {
         type: 'error',
         autoClose: 2000
       });
@@ -61,7 +62,7 @@ const Users = () => {
       <RollUpUser {...{ addOrEditUser, currentId, users }} />
 
       <div className="Users">
-        <h2>Mis Casos Creados</h2>
+        <h2>Lista de Usuarios</h2>
 
         <table border="1">
           <thead>

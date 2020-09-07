@@ -5,13 +5,11 @@ import { useUser } from 'reactfire'
 import { useFirebaseApp } from 'reactfire';
 import logo from '../../assets/imgs/logo.png';
 import { db } from '../../firebase';
-import { UserContexts } from '../../utils/UserContexts';
 
 const Menu = () => {
 
   const user = useUser();
   const firebase = useFirebaseApp();
-  // const { profile } = useContext(UserContexts)
   const [admin, setAdmin] = useState(false)
   const adminsArray = [];
 
@@ -42,7 +40,7 @@ const Menu = () => {
       <nav className="Menu">
         <ol className="Menu--name">
           <img className="Menu--name__logo" src={logo} alt="" />
-          <Link className="Menu--name__title" to="/">Suppourtil</Link>
+          <Link className="Menu--name__title" to="/">Marca</Link>
         </ol>
 
         {/* no logged */}
@@ -55,10 +53,7 @@ const Menu = () => {
         {admin && user &&
           <React.Fragment>
             <ol className="Menu--items">
-              <li><Link to="/users">Usuarios</Link></li>
-              <li><Link to="/technicians">Tecnicos</Link></li>
-              {/* <li><Link to="/new-issue">Crear Evento</Link></li> */}
-              <li><Link to="/events">Casos</Link></li>
+              <li><Link to="/users">Adminisitrar Usuarios</Link></li>
             </ol>
           </React.Fragment>
         }
@@ -68,9 +63,6 @@ const Menu = () => {
             <ol className="Menu--items">
               <li><Link to="/new-issue">Reportar</Link></li>
             </ol>
-            {/* <ol className="Menu--close-sesion">
-              <span><li onClick={handlelogout}>Cerrar Sesion</li></span>
-            </ol> */}
           </React.Fragment>
         }
       </nav>

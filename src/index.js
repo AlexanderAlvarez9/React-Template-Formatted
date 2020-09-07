@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
-import App from './containers/App';
+import App from './routes/App';
 import './firebase';
 import { FirebaseAppProvider } from 'reactfire'
 import { firebaseConfig } from './firebase';

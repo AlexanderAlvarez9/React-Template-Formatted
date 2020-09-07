@@ -1,24 +1,27 @@
-@import '../containers/App.scss';
+@import '../../assets/styles/containers/App.scss';
 
-.DetailsEvent {
-  display: flex;
+.RollUpUser {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1em;
   background-color: var(--card);
   margin: 3em auto;
   width: 80%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 2em;
 
   input {
     @include input();
   }
 
-  label {
-    @include label();
+  .inputBox {
+    display: grid;
   }
 
-  textarea {
-    @include textarea();
+  label {
+    @include label();
   }
 
   button {
@@ -31,5 +34,9 @@
 
   button:active {
     @include activeButton();
+  }
+
+  select {
+    @include select();
   }
 }

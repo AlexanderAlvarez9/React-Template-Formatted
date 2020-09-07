@@ -5,7 +5,6 @@ export const UserContexts = createContext();
 
 const UserProvider = ({ children }) => {
 
-
   const [profile, setProfile] = useState({ profile: 0 })
 
   return (

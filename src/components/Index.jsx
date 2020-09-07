@@ -6,7 +6,7 @@ const Index = () => {
   return (
     <Containers>
       <h1>Bienvenido al sistema de gestion de incidencias</h1>
-      <h1>asdas{process.env.REACT_APP_NAME}</h1>
+      {/* <h1>Login{process.env.REACT_APP_NAME}</h1> */}
       <Login />
     </Containers>
   )

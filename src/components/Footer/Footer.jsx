@@ -6,7 +6,7 @@ import { faFacebook, faInstagram, faTwitter, faWhatsapp, faYoutube, faGithub } f
 const Twitter = 'https://www.Twitter.com/';
 const Whatsapp = 'https://www.Whatsapp.com/';
 const Youtube = 'https://www.Youtube.com/';
-const Github = 'https://github.com/AlexanderAlvarez9/Itil-Support';
+const Github = 'https://github.com/AlexanderAlvarez9/React-Template-Formatted';
 class Footer extends React.Component {
   render() {
     return (

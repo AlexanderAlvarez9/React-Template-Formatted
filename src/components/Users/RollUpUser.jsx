@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import '../assets/styles/components/RollUpUser.scss';
-import { db } from '../firebase';
+import './RollUpUser.scss';
+import { db } from '../../firebase';
 
 const RollUpUser = (props) => {
 

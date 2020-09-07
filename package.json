@@ -5,42 +5,49 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode production",
-    "start": "env-cmd start webpack-dev-server --open --mode development",
-    "starts": "env-cmd start react-scripts start",
-    "dev": "env-cmd dev webpack-dev-server --open --mode development",
+    "start": "webpack-dev-server --open --mode development",
     "eslint": "eslint src/ --fix",
-    "format": "prettier --write '{*.js,src/**/*.{js,jsx}}'",
-    "test": "jest"
+    "format": "prettier --write \"src/*.+(js|jsx|json)\"",
+    "test": "jest",
+    "test:watch": "jest --watch --verbose",
+    "test:update": "jest --updateSnapshot",
+    "test:coverage": "jest --coverage"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MasterEatsPlatzi/Master-Eats.git"
+    "url": "https://github.com/AlexanderAlvarez9/React-Template.git"
   },
   "keywords": [
-    "Support"
+    "React",
+    "Template"
   ],
-  "author": "Alexander",
+  "author": "Alexander Alvarez",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/MasterEatsPlatzi/Master-Eats/issues"
+    "url": "https://github.com/AlexanderAlvarez9/React-Template/issues"
   },
-  "homepage": "https://github.com/MasterEatsPlatzi/Master-Eats#readme",
+  "homepage": "https://github.com/AlexanderAlvarez9/React-Template#readme",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@fortawesome/fontawesome-svg-core": "^1.2.29",
     "@fortawesome/free-brands-svg-icons": "^5.13.1",
     "@fortawesome/free-solid-svg-icons": "^5.13.1",
     "@fortawesome/react-fontawesome": "^0.1.11",
+    "axios": "^0.20.0",
     "date-fns": "^2.15.0",
     "dotenv": "^8.2.0",
     "env-cmd": "^10.1.0",
     "firebase": "^7.17.2",
+    "install": "^0.13.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-icomoon": "^2.1.5",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^3.4.3",
     "react-svg-loader": "^3.0.3",
+    "react-test-renderer": "^16.13.1",
     "react-toastify": "^6.0.8",
+    "react-transition-group": "^4.4.1",
     "reactfire": "^2.0.0-alpha.3",
     "svg-react-loader": "^0.4.6"
   },
@@ -52,6 +59,8 @@
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
     "css-loader": "^3.6.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.3",
     "eslint": "^7.4.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-plugin-import": "^2.22.0",
@@ -69,5 +78,13 @@
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/__test__/setupTest.js"
+    ],
+    "moduleNameMapper": {
+      "\\.(styl|css|scss)$": "<rootDir>/src/__mocks__/styleMock.js"
+    }
   }
 }
