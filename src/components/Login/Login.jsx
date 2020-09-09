@@ -3,8 +3,8 @@ import './Login.scss'
 import 'firebase/auth';
 import { db } from '../../firebase';
 import { useFirebaseApp, useUser } from 'reactfire';
-
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 require('dotenv').config();
 
@@ -36,11 +36,18 @@ const Login = () => {
   }
 
   const handleSingUp = async () => {
-    await firebase.auth().createUserWithEmailAndPassword(values.email, values.password).then(cred => {
-      return db.collection('users').doc(cred.user.uid).set({
-        ...userValues, email: cred.user.email
+    try {
+      await firebase.auth().createUserWithEmailAndPassword(values.email, values.password).then(cred => {
+        return db.collection('users').doc(cred.user.uid).set({
+          ...userValues, email: cred.user.email
+        })
       })
-    })
+    } catch (error) {
+      toast(error.message, {
+        type: 'error',
+        autoClose: 2000
+      });
+    }
   }
 
   const handlelogout = async () => {
@@ -70,6 +77,7 @@ const Login = () => {
 
   return (
     <React.Fragment>
+      <ToastContainer />
 
       {
         !user &&

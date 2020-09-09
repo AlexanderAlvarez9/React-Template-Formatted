@@ -57,11 +57,11 @@ const Users = () => {
   }, []);
 
   return (
-    <React.Fragment>
+    <div className="Users">
       <ToastContainer />
       <RollUpUser {...{ addOrEditUser, currentId, users }} />
 
-      <div className="Users">
+      <div className="User">
         <h2>Lista de Usuarios</h2>
 
         <table border="1">
@@ -109,7 +109,7 @@ const Users = () => {
           </tbody>
         </table>
       </div>
-    </React.Fragment>
+    </div>
   )
 }
 export default Users;
