@@ -48,7 +48,7 @@
     "react-toastify": "^6.0.8",
     "react-transition-group": "^4.4.1",
     "reactfire": "^2.0.0-alpha.3",
-    "svg-react-loader": "^0.4.0"
+    "svg-react-loader": "^0.4.6"
   },
   "devDependencies": {
     "@babel/core": "^7.10.4",
